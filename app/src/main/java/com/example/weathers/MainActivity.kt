@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.weathers.di.appMoudle.appModule
+import com.example.weathers.presentation.ui.navigation.NavEntry
 import com.example.weathers.presentation.viewModel.MainViewModel
 import com.example.weathers.ui.theme.WeathersTheme
 import org.koin.android.ext.koin.androidContext
@@ -33,7 +34,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
+                    NavEntry()
                 }
             }
         }
