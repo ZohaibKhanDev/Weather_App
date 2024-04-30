@@ -2,6 +2,7 @@ package com.example.weathers.presentation.ui.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -20,7 +21,9 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DarkMode
 import androidx.compose.material.icons.filled.WarningAmber
+import androidx.compose.material.icons.outlined.DarkMode
 import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -103,48 +106,77 @@ fun WeatherData(navController: NavController) {
         mutableStateOf("")
     }
     val scrollState = rememberScrollState()
+    var darkMode by remember {
+        mutableStateOf(false)
+    }
+    Icon(imageVector = Icons.Outlined.DarkMode, contentDescription = "")
     Column(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(scrollState)
-            .background(Color.White),
+            .background(Color(0XFFFFFFFF)),
         verticalArrangement = Arrangement.spacedBy(5.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-
-        TextField(
-            value = search,
-            onValueChange = {
-                search = it
-            },
-            placeholder = {
-                Text(text = "Search location", fontSize = 14.sp, fontWeight = FontWeight.Bold)
-            },
-            modifier = Modifier
-                .width(287.dp)
-                .height(50.dp),
-            colors = TextFieldDefaults.textFieldColors(
-                focusedTextColor = Color(0XFFC4C4C4),
-                unfocusedTextColor = Color(0XFFC4C4C4),
-                focusedIndicatorColor = Color.White,
-                unfocusedIndicatorColor = Color.White,
-                focusedPlaceholderColor = Color(0XFFC4C4C4),
-                unfocusedPlaceholderColor = Color(0XFFC4C4C4),
-                focusedLeadingIconColor = Color(0XFFC4C4C4),
-                unfocusedLeadingIconColor = Color(0XFFC4C4C4),
-                focusedTrailingIconColor = Color(0XFFC4C4C4),
-                unfocusedTrailingIconColor = Color(0XFFC4C4C4),
-                containerColor = Color(0XFFFDFCFC)
-            ),
-            shape = RoundedCornerShape(30.dp),
-            trailingIcon = {
-                Icon(imageVector = Icons.Outlined.Search, contentDescription = "")
-            },
-            textStyle = TextStyle(
-                fontSize = 14.sp, fontWeight = FontWeight.Bold
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Start,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            TextField(
+                value = search,
+                onValueChange = {
+                    search = it
+                },
+                placeholder = {
+                    Text(text = "Search location", fontSize = 14.sp, fontWeight = FontWeight.Bold)
+                },
+                modifier = Modifier
+                    .padding(start = 60.dp)
+                    .width(287.dp)
+                    .height(50.dp),
+                colors = TextFieldDefaults.textFieldColors(
+                    focusedTextColor = Color(0XFFC4C4C4),
+                    unfocusedTextColor = Color(0XFFC4C4C4),
+                    focusedIndicatorColor = Color.White,
+                    unfocusedIndicatorColor = Color.White,
+                    focusedPlaceholderColor = Color(0XFFC4C4C4),
+                    unfocusedPlaceholderColor = Color(0XFFC4C4C4),
+                    focusedLeadingIconColor = Color(0XFFC4C4C4),
+                    unfocusedLeadingIconColor = Color(0XFFC4C4C4),
+                    focusedTrailingIconColor = Color(0XFFC4C4C4),
+                    unfocusedTrailingIconColor = Color(0XFFC4C4C4),
+                    containerColor = Color(0XFFFDFCFC)
+                ),
+                shape = RoundedCornerShape(30.dp),
+                trailingIcon = {
+                    Icon(imageVector = Icons.Outlined.Search, contentDescription = "")
+                },
+                textStyle = TextStyle(
+                    fontSize = 14.sp, fontWeight = FontWeight.Bold
+                )
             )
-        )
+            if (darkMode){
+                Icon(
+                    imageVector = Icons.Default.DarkMode,
+                    contentDescription = "",
+                    modifier = Modifier
+                        .padding(start = 17.dp)
+                        .size(27.dp).clickable { darkMode=true }, tint = Color(0XFFC4C4C4)
+                )
+            }
+            else{
+                Icon(
+                    imageVector = Icons.Outlined.DarkMode,
+                    contentDescription = "",
+                    modifier = Modifier
+                        .padding(start = 17.dp)
+                        .size(27.dp).clickable { darkMode=false }, tint = Color(0XFFC4C4C4)
+                )
+            }
+
+        }
 
 
 
@@ -350,23 +382,38 @@ fun WeatherData(navController: NavController) {
             }
 
             Spacer(modifier = Modifier.height(10.dp))
-            Row (modifier = Modifier
-                .fillMaxWidth()
-                .padding(start = 10.dp)){
-                Text(text = "Length of day:", color = Color(0XFF9A9A9A), fontSize = 13.sp, fontWeight = FontWeight.Medium)
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 10.dp)
+            ) {
+                Text(
+                    text = "Length of day:",
+                    color = Color(0XFF9A9A9A),
+                    fontSize = 13.sp,
+                    fontWeight = FontWeight.Medium
+                )
                 Text(text = "13H 12M", fontSize = 13.sp, fontWeight = FontWeight.Medium)
             }
             Spacer(modifier = Modifier.height(6.dp))
-            Row (modifier = Modifier
-                .fillMaxWidth()
-                .padding(start = 10.dp)){
-                Text(text = "Remaining daylight", color = Color(0XFF9A9A9A), fontSize = 13.sp, fontWeight = FontWeight.Medium)
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 10.dp)
+            ) {
+                Text(
+                    text = "Remaining daylight",
+                    color = Color(0XFF9A9A9A),
+                    fontSize = 13.sp,
+                    fontWeight = FontWeight.Medium
+                )
                 Text(text = "9H 22M", fontSize = 13.sp, fontWeight = FontWeight.Medium)
             }
         }
 
     }
 }
+
 
 
 
