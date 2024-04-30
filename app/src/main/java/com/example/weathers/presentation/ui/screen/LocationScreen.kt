@@ -163,7 +163,7 @@ fun WeatherData(navController: NavController) {
                     contentDescription = "",
                     modifier = Modifier
                         .padding(start = 17.dp)
-                        .size(27.dp).clickable { darkMode=true }, tint = Color(0XFFC4C4C4)
+                        .size(27.dp).clickable { darkMode=!darkMode }, tint = Color(0XFFC4C4C4)
                 )
             }
             else{
@@ -172,7 +172,7 @@ fun WeatherData(navController: NavController) {
                     contentDescription = "",
                     modifier = Modifier
                         .padding(start = 17.dp)
-                        .size(27.dp).clickable { darkMode=false }, tint = Color(0XFFC4C4C4)
+                        .size(27.dp).clickable { darkMode=!darkMode }, tint = Color(0XFFC4C4C4)
                 )
             }
 
