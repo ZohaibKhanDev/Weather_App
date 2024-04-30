@@ -28,6 +28,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.weathers.presentation.ui.screen.AddScreen
 import com.example.weathers.presentation.ui.screen.LocationScreen
 import com.example.weathers.presentation.ui.screen.MenuScreen
+import com.example.weathers.presentation.ui.screen.WeatherData
 
 @Composable
 fun Navigation(navController: NavHostController) {
@@ -37,13 +38,13 @@ fun Navigation(navController: NavHostController) {
         startDestination = Screen.Location.route
     ) {
         composable(Screen.Location.route) {
-            LocationScreen()
+            WeatherData(navController)
         }
         composable(Screen.Add.route) {
-            AddScreen()
+            AddScreen(navController)
         }
         composable(Screen.Menu.route) {
-            MenuScreen()
+            MenuScreen(navController)
         }
     }
 }
@@ -93,7 +94,7 @@ fun BottomNavigation(navController: NavController) {
         Screen.Menu
     )
 
-    NavigationBar(containerColor = Color(0XFF9D52AC)) {
+    NavigationBar(containerColor = Color.White) {
         val navStack by navController.currentBackStackEntryAsState()
         val current = navStack?.destination?.route
 
@@ -117,9 +118,9 @@ fun BottomNavigation(navController: NavController) {
                     }
                 },
                 colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = Color.White,
-                    unselectedIconColor = Color.White,
-                    indicatorColor = Color(0XFF9D52AC)
+                    selectedIconColor = Color.LightGray,
+                    unselectedIconColor = Color.LightGray,
+                    indicatorColor = Color.White
                 )
             )
         }
