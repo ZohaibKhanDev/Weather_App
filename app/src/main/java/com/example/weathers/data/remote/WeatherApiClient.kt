@@ -50,7 +50,7 @@ object WeatherApiClient {
     }
 
     suspend fun getWeather(): Weather {
-        return client.get("https://api.tomorrow.io/v4/weather/forecast?location=42.3478,-71.0466$API_KEY")
+        return client.get("http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=30.19487491772538, 71.01516433729232")
             .body()
     }
 }

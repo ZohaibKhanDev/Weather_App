@@ -1,10 +1,11 @@
 package com.example.weathers.presentation.ui.navigation
 
 import android.annotation.SuppressLint
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.width
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.AddCircleOutline
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.LocationOn
+import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.LocationOn
 import androidx.compose.material.icons.outlined.Menu
 import androidx.compose.material3.Icon
@@ -14,38 +15,31 @@ import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.text.font.FontVariation.width
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.weathers.presentation.ui.screen.AddScreen
 import com.example.weathers.presentation.ui.screen.LocationScreen
-import com.example.weathers.presentation.ui.screen.MenuScreen
-import com.example.weathers.presentation.ui.screen.WeatherData
+import com.example.weathers.presentation.ui.screen.HomeScreen
 
 @Composable
 fun Navigation(navController: NavHostController) {
 
     NavHost(
         navController = navController,
-        startDestination = Screen.Location.route
+        startDestination = Screen.Home.route
     ) {
+        composable(Screen.Home.route) {
+            HomeScreen(navController = navController)
+        }
         composable(Screen.Location.route) {
-            WeatherData(navController)
+            LocationScreen(navController)
         }
-        composable(Screen.Add.route) {
-            AddScreen(navController)
-        }
-        composable(Screen.Menu.route) {
-            MenuScreen(navController)
-        }
+
     }
 }
 
@@ -55,26 +49,21 @@ sealed class Screen(
     val selectedIcon: ImageVector,
     val unSelectedIcon: ImageVector
 ) {
+    object Home : Screen(
+        "Home",
+        "Home",
+        selectedIcon = Icons.Filled.Home,
+        unSelectedIcon = Icons.Outlined.Home
+    )
+
     object Location : Screen(
         "Location",
         "Location",
-        selectedIcon = Icons.Outlined.LocationOn,
+        selectedIcon = Icons.Filled.LocationOn,
         unSelectedIcon = Icons.Outlined.LocationOn
     )
 
-    object Add : Screen(
-        "Add",
-        "Add",
-        selectedIcon = Icons.Outlined.AddCircleOutline,
-        unSelectedIcon = Icons.Outlined.AddCircleOutline
-    )
 
-    object Menu : Screen(
-        "Menu",
-        "Menu",
-        selectedIcon = Icons.Outlined.Menu,
-        unSelectedIcon = Icons.Outlined.Menu
-    )
 }
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -89,9 +78,9 @@ fun NavEntry() {
 @Composable
 fun BottomNavigation(navController: NavController) {
     val item = listOf(
+        Screen.Home,
         Screen.Location,
-        Screen.Add,
-        Screen.Menu
+
     )
 
     NavigationBar(containerColor = Color.White) {
@@ -111,14 +100,16 @@ fun BottomNavigation(navController: NavController) {
                     }
                 },
                 icon = {
-                    if (current == it.route) {
-                        Icon(imageVector = it.selectedIcon, contentDescription = "")
-                    } else {
-                        Icon(imageVector = it.unSelectedIcon, contentDescription = "")
-                    }
+                        if (current == it.route) {
+                            Icon(imageVector = it.selectedIcon, contentDescription = "", tint = Color.Red)
+                        } else {
+                            Icon(imageVector = it.unSelectedIcon, contentDescription = "")
+                        }
+
+
                 },
                 colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = Color.LightGray,
+                    selectedIconColor = Color.Red,
                     unselectedIconColor = Color.LightGray,
                     indicatorColor = Color.White
                 )
