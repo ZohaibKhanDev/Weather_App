@@ -8,6 +8,7 @@
 - **Every City Full Dteail**
 - **All Counrty Tempracher**
 - **Real-time forecasts**
+- **Location-based alerts**
 
 
 
