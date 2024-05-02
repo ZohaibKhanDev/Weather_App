@@ -12,6 +12,7 @@
 - **Interactive radar**
 - **Hourly updates**
 - **Customizable widgets**
+- **Severe weather notifications**
 
 
 
