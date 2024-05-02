@@ -13,6 +13,7 @@
 - **Hourly updates**
 - **Customizable widgets**
 - **Severe weather notifications**
+- **Historical data**
 
 
 
