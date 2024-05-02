@@ -11,6 +11,7 @@
 - **Location-based alerts**
 - **Interactive radar**
 - **Hourly updates**
+- **Customizable widgets**
 
 
 
