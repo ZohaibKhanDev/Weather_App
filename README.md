@@ -7,6 +7,7 @@
 - **Cloud Detail**
 - **Every City Full Dteail**
 - **All Counrty Tempracher**
+- **Real-time forecasts**
 
 
 
