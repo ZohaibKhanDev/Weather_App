@@ -10,7 +10,7 @@
 - **Real-time forecasts**
 - **Location-based alerts**
 - **Interactive radar**
-- **
+- **Hourly updates**
 
 
 
