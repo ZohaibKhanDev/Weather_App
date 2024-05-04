@@ -16,6 +16,7 @@
 - **Historical data**
 - **Sunrise/sunset times**
 - **Precise forecasts**
+- **Intuitive interface**
 
 
 
