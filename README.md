@@ -15,6 +15,7 @@
 - **Severe weather notifications**
 - **Historical data**
 - **Sunrise/sunset times**
+- **Precise forecasts**
 
 
 
