@@ -19,6 +19,7 @@
 - **Intuitive interface**
 - **Detailed maps**
 - **Custom notifications**
+- **Hourly updates**
 
 
 ## 🤝 Connect with Me
