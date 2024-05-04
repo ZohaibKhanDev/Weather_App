@@ -17,6 +17,7 @@
 - **Sunrise/sunset times**
 - **Precise forecasts**
 - **Intuitive interface**
+- **Detailed maps**
 
 
 
