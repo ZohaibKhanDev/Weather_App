@@ -18,7 +18,7 @@
 - **Precise forecasts**
 - **Intuitive interface**
 - **Detailed maps**
-
+- **Custom notifications**
 
 
 ## 🤝 Connect with Me
