@@ -1,6 +1,6 @@
 # Weather App
 ## Overview
-Introducing WeatherNow, your ultimate companion for staying ahead of the elements! 
+Introducing WeatherNow, your ultimate companion for staying ahead of the elements!Whether you're planning a weekend getaway
 
 ## 🚀 Key Features
 - **All World Weather**
