@@ -1,7 +1,7 @@
 # Weather App
 ## Overview
 Introducing WeatherNow, your ultimate companion for staying ahead of the elements!Whether you're planning a weekend getaway commuting to work, or simply curious about what the day has in store, WeatherNow has you covered.With a sleek and intuitive interface, WeatherNow provides up-to-the-minute weather updates tailored to your location. Get real-time forecasts for today,tomorrow, and the week ahead, ensuring you're always prepared for whatever Mother Nature throws your way.
-.......
+........
 
 ## 🚀 Key Features
 - **All World Weather**
