@@ -11,17 +11,6 @@ Introducing WeatherNow, your ultimate companion for staying ahead of the element
 - **Location-based alerts**
 - **Interactive radar**
 - **Hourly updates**
-- **Customizable widgets**
-- **Severe weather notifications**
-- **Historical data**
-- **Sunrise/sunset times**
-- **Precise forecasts**
-- **Intuitive interface**
-- **Detailed maps**
-- **Custom notifications**
-- **Hourly updates**
-- **Severe alerts**
-- **Multiple locations**
 
 ## 🤝 Connect with Me
 Let's chat about potential projects, job opportunities, or any other collaboration! Feel free to connect with me through the following channels:
