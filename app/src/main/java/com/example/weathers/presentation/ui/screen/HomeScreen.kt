@@ -98,6 +98,7 @@ fun HomeScreen(navController: NavController) {
 
 }
 
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun WeatherData(weather: Weather, navController: NavController) {
