@@ -9,7 +9,7 @@
 - **All Counrty Tempracher**
 - **Real-time forecasts**
 - **Location-based alerts**
-- **Interactive radar**
+- **Interactive radar** 
 - **Hourly updates**
 
 ## 🤝 Connect with Me
